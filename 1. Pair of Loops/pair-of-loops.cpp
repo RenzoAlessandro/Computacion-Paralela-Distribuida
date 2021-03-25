@@ -26,8 +26,7 @@ int main()
         //std::cout<<x[j]<<std::endl;
     }
 
-    /*  Primer Par de loops  */
-    
+    /*  Primer Par de loops  */    
     start = std::chrono::high_resolution_clock::now();
     for (int i = 0; i < MAX; i++){
         for (int j = 0; j < MAX; j++){
@@ -45,11 +44,8 @@ int main()
     // }
     // end = std::chrono::high_resolution_clock::now();
 
-
-as
-
-    long long duration = std::chrono::duration_cast<std::chrono::seconds>(end - start).count();
-    std::cout << "\tDuración: " + std::to_string(duration) + "s\n" << std::endl;
+    long long duration = std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count();
+    std::cout << "\tPrimer Par de loops - Duración: " + std::to_string(duration) + "ms\n" << std::endl;
     return 0;
 }
 
