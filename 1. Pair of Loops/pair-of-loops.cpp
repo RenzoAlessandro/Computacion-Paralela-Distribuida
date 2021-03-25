@@ -1,4 +1,4 @@
-#include<iostream>
+#include <iostream>
 #include <random>
 #define MAX 1000
 
@@ -44,8 +44,8 @@ int main()
     // }
     // end = std::chrono::high_resolution_clock::now();
 
-    long long duration = std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count();
-    std::cout << "\tPrimer Par de loops - Duración: " + std::to_string(duration) + "ms\n" << std::endl;
+    long long duration = std::chrono::duration_cast<std::chrono::microseconds>(end - start).count();
+    std::cout << "\tSegundo Par de loops - Duración: " + std::to_string(duration) + "micros.\n" << std::endl;
     return 0;
 }
 
