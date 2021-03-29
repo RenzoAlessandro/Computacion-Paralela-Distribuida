@@ -45,7 +45,7 @@ int main()
     // end = std::chrono::high_resolution_clock::now();
 
     long long duration = std::chrono::duration_cast<std::chrono::microseconds>(end - start).count();
-    std::cout << "\tSegundo Par de loops - Duración: " + std::to_string(duration) + "micros.\n" << std::endl;
+    std::cout << "\tDuración: " + std::to_string(duration) + "micros.\n" << std::endl;
     return 0;
 }
 
