@@ -23,8 +23,7 @@ void print_matrix(double** Matrix, int fila, int columna){
     }
 }
  
-void block_multiplication(int n, double** a, double** b, double** c)
-{
+void block_multiplication(int n, double** a, double** b, double** c){
     int bi, bj, bk, i, j, k;
     bi = bj = bk = i =  j = k = 0;
     int blockSize=4; 
@@ -53,8 +52,7 @@ int main(void)
     double** C;
     int i=0;
     int j=0;
-    printf ("Please enter matrix dimension n : ");
-    scanf("%d", &n);
+    std::cout<<"Ingrese la dimensión de Matriz (n): "; std::cin>>n;
     // Asignar memoria para las matrices
      
     ///////////////////// Matrix A //////////////////////////
@@ -77,7 +75,6 @@ int main(void)
     }
  
     ///////////////////// Matrix B //////////////////////////
- 
     B =(double **)malloc(n*sizeof(double *));
     B[0] = (double *)malloc(n*n*sizeof(double));
     if(!B)
@@ -132,12 +129,12 @@ int main(void)
     end = std::chrono::high_resolution_clock::now();
 
     /*  Imprimimos las matrices A, B y C  */
-    std::cout<<"\tMatriz A"<<std::endl;
-    print_matrix(A, n, n);
-    std::cout<<"\tMatriz B"<<std::endl;
-    print_matrix(B, n, n);
-    std::cout<<"\tMatriz C"<<std::endl;
-    print_matrix(C, n, n);
+    // std::cout<<"\tMatriz A"<<std::endl;
+    // print_matrix(A, n, n);
+    // std::cout<<"\tMatriz B"<<std::endl;
+    // print_matrix(B, n, n);
+    // std::cout<<"\tMatriz C"<<std::endl;
+    // print_matrix(C, n, n);
      
     // Desasignar memoria para las matrices
     free(A[0]);
@@ -147,7 +144,7 @@ int main(void)
     free(C[0]);
     free(C);
 
-    long long duration = std::chrono::duration_cast<std::chrono::microseconds>(end - start).count();
-    std::cout << "\tDuración: " + std::to_string(duration) + " micros.\n" << std::endl;
+    long long duration = std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count();
+    std::cout << "\tTiempo: " + std::to_string(duration) + " milliseconds.\n" << std::endl;
     return 0;
 }
