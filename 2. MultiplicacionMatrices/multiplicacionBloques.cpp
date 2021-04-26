@@ -26,7 +26,7 @@ void print_matrix(double** Matrix, int fila, int columna){
 void block_multiplication(int n, double** a, double** b, double** c){
     int bi, bj, bk, i, j, k;
     bi = bj = bk = i =  j = k = 0;
-    int blockSize=4; 
+    int blockSize=10; 
     
     for(bi=0; bi<n; bi+=blockSize){
         for(bj=0; bj<n; bj+=blockSize){
