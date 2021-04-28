@@ -4,16 +4,16 @@
  * Propósito:
  *    Utilizar barreras de semaphore para sincronizar threads.
  *
- * Input:
+ * Entrada:
  *    Ninguna
- * Output:
+ * Salida:
  *    Time for BARRIER_COUNT barriers
  *
- * Compile:
+ * Compilar:
  *    gcc -g -Wall -o ejecutable semaphores_barrier.c -lpthread
  *    timer.h needs to be available
  *
- * Usage:
+ * Ejecutar:
  *    ./ejecutable <thread_count>
  *
  * Nota:
@@ -99,6 +99,7 @@ void *Thread_work(void* rank) {
    int i, j;
 
    for (i = 0; i < BARRIER_COUNT; i++) {
+      // Barrera
       sem_wait(&count_sem);
       if (counter == thread_count - 1) {
          counter = 0;

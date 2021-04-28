@@ -4,16 +4,16 @@
  * Propósito:
  *    Use condition wait barriers to synchronize threads.
  *
- * Compile:
+ * Compilar:
  *    gcc -g -Wall -o ejecutable condition_barrier.c -lpthread
  *    timer.h debe estar disponible
  *
- * Usage:
+ * Ejecutar:
  *    ./ejecutable <thread_count>
  *
- * Input:
- *    none
- * Output:
+ * Entrada:
+ *    Ninguna
+ * Salida:
  *    Time for BARRIER_COUNT barriers
  *
  * Nota:    
@@ -96,6 +96,7 @@ void *Thread_work(void* rank) {
    int i;
 
    for (i = 0; i < BARRIER_COUNT; i++) {
+      // Barrera
       pthread_mutex_lock(&barrier_mutex);
       barrier_thread_count++;
       if (barrier_thread_count == thread_count) {

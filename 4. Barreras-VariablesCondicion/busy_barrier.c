@@ -4,14 +4,14 @@
  * Propósito:
  *    Utilizar barreras busy ocupada para sincronizar threads.
  *
- * Input:
+ * Entrada:
  *    ninguno
- * Output:
+ * Salida:
  *    Time for BARRIER_COUNT barriers
  *
- * Compile:
+ * Compilar:
  *    gcc -g -Wall -o ejecutable busy_barrier.c -lpthread
- * Usage:
+ * Ejecutar:
  *    ./ejecutable <thread_count>
  *
  * Nota:
@@ -92,6 +92,7 @@ void *Thread_work(void* rank) {
    int i;
 
    for (i = 0; i < BARRIER_COUNT; i++) {
+      // Barrera
       pthread_mutex_lock(&barrier_mutex);
       barrier_thread_counts[i]++;
       pthread_mutex_unlock(&barrier_mutex);
